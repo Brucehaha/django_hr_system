@@ -1,30 +1,42 @@
-<form method="post" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Submit</button>
-</form>
+{% extends "layout.html" %}
+{% block title  %} upload{% endblock %}
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Uploaded at</th>
-      <th>Size</th>
-    </tr>
-  </thead>
-  <tbody>
+{% block content %}
 
-    {% for document in documents %}
-      <tr>
-        <td><a href="{{ document.upload.url }}" target="_blank">{{ document.upload.name }}</a></td>
-        <td>{{ document.uploaded_at }}</td>
-        <td>{{ document.upload.size|filesizeformat }}</td>
-      </tr>
-    {% empty %}
-      <tr>
-        <td colspan="3">No data.</td>
-      </tr>
-    {% endfor %}
+     <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit">Submit</button>
+            </form>
 
-  </tbody>
-</table>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Uploaded at</th>
+                  <th>Size</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                {% for document in documents %}
+                  <tr>
+                    <td><a href="{{ document.upload.url }}" target="_blank">{{ document.upload.name }}</a></td>
+                    <td>{{ document.uploaded_at }}</td>
+                    <td>{{ document.upload.size|filesizeformat }}</td>
+                  </tr>
+                {% empty %}
+                  <tr>
+                    <td colspan="3">No data.</td>
+                  </tr>
+                {% endfor %}
+
+              </tbody>
+            </table>
+
+        </div>
+      </div>
+    {% endblock %}
