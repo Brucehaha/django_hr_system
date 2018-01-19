@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'storages',
     'upload',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
@@ -128,7 +129,7 @@ STATIC_URL = '/static/'
 
 
 STATICFILES_DIRS = [
- os.path.join(BASE_DIR, 'hr/static'),
+ os.path.join(BASE_DIR, 'hr/assets'),
 ]
 # Aws boto3 set
 
