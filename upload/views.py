@@ -7,7 +7,7 @@ from upload.models import Document
 
 class DocumentCreateView(CreateView):
     model = Document
-    fields = ['upload', ]
+    fields = ['upload' ]
     success_url = reverse_lazy('home')
     template_name = 'upload/document_form.html'
 
@@ -16,3 +16,6 @@ class DocumentCreateView(CreateView):
         documents = Document.objects.all()
         context['documents'] = documents
         return context
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
