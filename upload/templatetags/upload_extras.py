@@ -1,8 +1,8 @@
-# from django import template
-# import re
-# register =template.Library
-#
-# @register.filter('filename_extract')
-# def filename_extract(value):
-#     '''extract the file name from theupload_to_path'''
-#     return re.sub(r".*/", value)
+from django import template
+
+register = template.Library()
+
+@register.filter('filename')
+def filename(value):
+    folder, filename=value.split("/")
+    return filename

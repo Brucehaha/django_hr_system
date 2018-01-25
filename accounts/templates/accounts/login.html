@@ -1,0 +1,15 @@
+{% extends 'header.html' %}
+{% load bootstrap4 %}
+{% block title %}login{% endblock %}
+
+{% block leftsidebar %}
+<div class="container">
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit", value="Login" class="btn btn-default">
+    </form>
+
+{% endblock %}
+

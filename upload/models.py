@@ -14,7 +14,13 @@ class Document(models.Model):
     upload = models.FileField(upload_to=upload_to_path)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    class Meta:
+        ordering=['-uploaded_at']
+
 class PrivateDocument(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True)
-    upload = models.FileField(storage=PrivateMediaStorage())
+    upload = models.FileField(upload_to=upload_to_path, storage=PrivateMediaStorage())
     user = models.ForeignKey(User, related_name='documents', on_delete=models.CASCADE)
+
+    class Meta:
+        ordering=['-uploaded_at']

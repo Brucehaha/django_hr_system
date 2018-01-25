@@ -17,5 +17,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('',views.DocumentCreateView.as_view(),name='upload'),
+
+    path('public/', views.DocumentCreateView.as_view(), name='public'),
+    path('private/',views.PrivateDocumentView.as_view(),name='private'),
 ]
