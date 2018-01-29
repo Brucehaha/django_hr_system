@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on localhost:8000
+From: webmaster@localhost
+To: bruceapple@hotmail.com
+Date: Mon, 29 Jan 2018 06:10:11 -0000
+Message-ID: <151720621179.21000.6367922706482656277@Tech>
+
+
+You're receiving this email because you requested a password reset for your user account at localhost:8000.
+
+Please go to the following page and choose a new password:
+
+http://localhost:8000/accounts/reset/OA/4t9-729352324608ccd683ed/
+
+Your username, in case you've forgotten: Brucehaha
+
+Thanks for using our site!
+
+The localhost:8000 team
+
+
+
+-------------------------------------------------------------------------------
